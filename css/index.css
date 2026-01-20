@@ -46,7 +46,6 @@ main{
 }
 section{
     width: 100%;
-    padding-right: 0;
     /* border: solid 1px tomato; */
 }
 .ereaWrap{
@@ -68,6 +67,8 @@ section{
         width: 90px;
         &:last-child{
             font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 6px;
         }
     }
 }
@@ -85,15 +86,17 @@ footer ul{
     position: fixed;
     left: 0;
     bottom: 0;
+    box-shadow: -1px 0 2px #ccc;
     li{
         /* width: 95px; */
         width: 25%;
         min-height: 64px;
-        border: solid 1px #593200;
+        /* border: solid 1px #593200; */
         font-weight: bold;
         font-size: 1.2rem;
         /* padding: 22px 0 8px 0; */
         text-align: center;
+        background-color: #fff;
         &:first-child a{
             color: #fff;
             background-color: #593200;
