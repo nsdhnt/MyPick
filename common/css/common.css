@@ -1,0 +1,145 @@
+html{
+  font-size: 62.5%;
+}
+html,body{
+  height: 100%;
+}
+header{
+  padding: 1rem;
+  border-bottom: 1px solid #999;
+}
+main{
+  padding: 20px;
+}
+main>section{
+  padding: 20px;
+}
+.des{
+  background: #EEE;
+  padding: 20px;
+}
+.des>h2{
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+.des>p{
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.docTtl{
+  font-size: 1.6rem;
+}
+
+main>section>h2{
+  font-size: 2rem;
+  color: #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #EFEFEF;
+}
+main>section>p{
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+}
+
+main>section>h3{
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+main>section>.point{
+  padding: 20px;
+  background: #EEE;
+}
+main>section>.point h3{
+  color: #EE0000;
+}
+main>section>.point p{
+  font-size: 1.4rem;
+}
+
+main>section>.point a{
+  padding: 0.3rem 0.3rem;
+  background: #e3346c;
+}
+main>section>.point a:link,
+main>section>.point a:visited{
+  color: #FFF;
+  text-decoration: none;
+}
+
+main>section>.point a:hover{
+  background: #db678c;
+}
+
+.view{
+  border: solid 1px #999;
+  padding: 20px;
+  margin: 20px 0;
+}
+.view p{
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
+
+input[type="button"],button{
+  margin:0 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  /* vertical-align: middle; */
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: #eb6100;
+}
+input[type="button"]:hover,button:hover{
+  color: #fff;
+  background: #f56500;
+}
+input[type="text"]{
+  border:solid 1px #999;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+pre{
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+select{
+  border: solid 1px #999;
+  padding: 1.4rem;
+  -webkit-appearance: auto;
+}
+select::-ms-expand{
+  display: block;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+table,th,td{
+  border: solid 1px #333;
+}
+th{
+  background: #333;
+  color: #FFF;
+}
+td{
+  text-align: center;
+}
+th,td{
+  padding: 0.6rem 1rem;
+}

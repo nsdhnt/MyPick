@@ -1,0 +1,118 @@
+body{
+    width: 100%;
+    height: 1000px;
+    margin-inline: auto;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+header{
+    background-color: #593200;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+a{
+    text-decoration: none;
+    color: #593200;
+}
+.button{
+    display: flex;
+    margin-top: 80px;
+    justify-content: space-between;
+    p{
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #593200;
+        border: solid 4px #593200;
+        border-radius: 10px;
+        /* width: 176px; */
+        width: 45%;
+        height: 60px;
+        text-align: center;
+        line-height: 52px;
+    }
+}
+h1{
+    font-size: 2rem;
+    margin-bottom: -50px;
+}
+
+main{
+    /* border: solid 1px tomato; */
+    padding: 0 0;
+}
+section{
+    width: 100%;
+    padding-right: 0;
+    /* border: solid 1px tomato; */
+}
+.ereaWrap{
+    display: flex;
+    overflow-x: auto;
+    gap: 18px;
+    /* border: solid 1px tomato; */
+}
+.menuCard{
+    p:first-child{
+        width: 90px;
+        height: 60px;
+        background-color: #DCAE73;
+        color: #000;
+        box-shadow: 0px 0px 1px #999;
+        border-radius: 10px;
+    }
+    p{
+        width: 90px;
+        &:last-child{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+h2{
+    font-size: 1.6rem;
+    p{
+        font-size: 1.2rem;
+    }
+}
+footer ul{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    li{
+        /* width: 95px; */
+        width: 25%;
+        min-height: 64px;
+        border: solid 1px #593200;
+        font-weight: bold;
+        font-size: 1.2rem;
+        /* padding: 22px 0 8px 0; */
+        text-align: center;
+        &:first-child a{
+            color: #fff;
+            background-color: #593200;
+        }
+        a{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+            padding-bottom: 4px;
+            color: #593200;
+            /* border: solid 1px tomato; */
+            img{
+                width: 30px;
+                height: 30px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
