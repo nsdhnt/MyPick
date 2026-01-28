@@ -1,13 +1,68 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 70px;
+    img{
+        width: 12px;
+        object-fit: contain;
+        position: absolute;
+        left: 20px;
+    }
+    h1{
+        padding: 17px 0;
+        /* border: solid 1px tomato; */
+        /* font-size: 2.4rem; */
+    }
+}
+
+
 main{
+    margin-top: 10px;
     padding: 0;
     padding-bottom: 64px;
     /* border: solid 1px tomato; */
-    h1{
+    /* h1{
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 17px 0;
+        border: solid 1px tomato;
+    } */
+
+    .searchBox{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 372px;
+        height: 40px;
+        border-radius: 50px;
+        margin-inline: auto;
     }
+    .searchBox input{
+        width: 372px;
+        height: 40px;
+        box-shadow:  0 0 2px #aaa;
+        border-radius: 50px;
+        font-size: 1.4rem;
+        padding: 0 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        &::placeholder{
+            color: #593200;
+            opacity: 50%;
+            font-weight: bold;
+        }
+    }
+    .searchBox img{
+        position: absolute;
+        width: 16px;
+        object-fit: contain;
+        left: 5%;
+        top: 12px;
+    }
+    
     nav{
         width: 100%;
         background-color: #FFEDD5;
@@ -59,11 +114,12 @@ main{
             margin-inline: auto;
             margin-block: 10px;
             padding-top: 9px;
+            position: relative;
             img{
                 position: absolute;
                 width: 15px;
                 height: 20px;
-                right: 20px;
+                right: 10px;
             }
             .menuContent{
                 display: flex;
