@@ -125,9 +125,12 @@ footer ul{
         text-align: center;
         background-color: #fff;
         &:first-child a{
+            color: #593200;
+        }
+        /* &:first-child a{
             color: #fff;
             background-color: #593200;
-        }
+        } */
         a{
             display: flex;
             flex-direction: column;
@@ -135,8 +138,11 @@ footer ul{
             align-items: center;
             height: 100%;
             padding-bottom: 4px;
-            color: #593200;
+            color: #9A9A9A;
             text-decoration: none;
+            /* &:first-child{
+                color: #593200;
+            } */
             /* border: solid 1px tomato; */
             img{
                 width: 30px;

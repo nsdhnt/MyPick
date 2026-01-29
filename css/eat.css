@@ -132,11 +132,33 @@ main{
                             width: 12px;
                             height: auto;
                         }
+                        .deleteBtn{
+                            width: 12px;
+                            height: auto;
+                        }
                     }
                 }
             }
         }
     }
+}
+
+/* .menuContent2 内の p > a > img 全体に効くように外に出すか、階層を整理します */
+.menuContent2 p a img {
+    /* ここでサイズを固定 */
+    width: 16px !important; /* 他のスタイルに負けないように念のため */
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0; /* flexの子要素でも潰れないように */
+}
+
+/* 個別に微調整したい場合 */
+.menuContent2 p a .goEat {
+    width: 20px !important;
+}
+
+.menuContent2 p a .delete {
+    width: 14px !important;
 }
 
 
@@ -159,8 +181,7 @@ footer ul{
         text-align: center;
         background-color: #fff;
         &:nth-child(3) a{
-            color: #fff;
-            background-color: #593200;
+            color: #593200;
         }
         a{
             display: flex;
@@ -169,7 +190,7 @@ footer ul{
             align-items: center;
             height: 100%;
             padding-bottom: 4px;
-            color: #593200;
+            color: #9A9A9A;
             text-decoration: none;
             /* border: solid 1px tomato; */
             img{

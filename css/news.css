@@ -76,12 +76,12 @@ main{
                 width: 84px;
                 height: 32px;
                 background-color: #FFEDD5;
-                &:first-child{
+                /* &:first-child{
                     border-bottom: solid 3px #593200;
                 }
                 &:first-child a{
                     color: #593200;
-                }
+                } */
                 a{
                     display: flex;
                     justify-content: center;
@@ -93,7 +93,20 @@ main{
                     font-size: 1.4rem;
                 }
             }
+            .tabItem.active{
+                border-bottom: solid 3px #593200;
+                a{
+                    color: #593200;
+                }
+            }
         }
+    }
+
+    .tabPanel{
+        display: none;
+    }
+    .tabPanel.active{
+        display: block;
     }
     h2{
         color: #000;
@@ -153,9 +166,30 @@ main{
             }
         }
     }
+    .toast {
+        position: fixed;
+        bottom: -50px; /* 最初は画面の下に隠す */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        opacity: 0;
+        transition: all 0.4s ease; /* ふわっと動かすアニメーション */
+        z-index: 10;
+        /* bottom: 20px; */
+    }
+
+    /* 「show」クラスがついたら見えるようにする */
+    .toast.show {
+        bottom: 30px; /* 画面下から30pxの位置に浮き上がる */
+        opacity: 1;
+    }
 }
 
 footer ul{
+    /* z-index: 20; */
     display: flex;
     list-style: none;
     width: 100%;
@@ -174,8 +208,7 @@ footer ul{
         text-align: center;
         background-color: #fff;
         &:nth-child(2) a{
-            color: #fff;
-            background-color: #593200;
+            color: #593200;
         }
         a{
             display: flex;
@@ -184,7 +217,7 @@ footer ul{
             align-items: center;
             height: 100%;
             padding-bottom: 4px;
-            color: #593200;
+            color: #9A9A9A;
             text-decoration: none;
             /* border: solid 1px tomato; */
             img{

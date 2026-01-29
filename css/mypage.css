@@ -36,6 +36,11 @@ main{
         flex-wrap: wrap;
         gap: 16px;
         justify-content: space-around;
+        a{
+            color: #000;
+            border-radius: 10px;
+            /* border: solid 1px tomato; */
+        }
     }
     .buttonCard{
         width: 100px;
@@ -43,6 +48,9 @@ main{
         box-shadow: 0 0 2px #ccc;
         border-radius: 10px;
         position: relative;
+        &:hover{
+            box-shadow: 0 0 5px #ccc;
+        }
         img{
             position: absolute;
             top: 16px;
@@ -85,8 +93,7 @@ footer ul{
         text-align: center;
         background-color: #fff;
         &:last-child a{
-            color: #fff;
-            background-color: #593200;
+            color: #593200;
         }
         a{
             display: flex;
@@ -95,7 +102,7 @@ footer ul{
             align-items: center;
             height: 100%;
             padding-bottom: 4px;
-            color: #593200;
+            color: #9A9A9A;
             text-decoration: none;
             /* border: solid 1px tomato; */
             img{

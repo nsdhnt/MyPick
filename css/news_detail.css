@@ -121,8 +121,7 @@ footer ul{
         text-align: center;
         background-color: #fff;
         &:nth-child(2) a{
-            color: #fff;
-            background-color: #593200;
+            color: #593200;
         }
         a{
             display: flex;
@@ -131,7 +130,7 @@ footer ul{
             align-items: center;
             height: 100%;
             padding-bottom: 4px;
-            color: #593200;
+            color: #9A9A9A;
             text-decoration: none;
             /* border: solid 1px tomato; */
             img{
