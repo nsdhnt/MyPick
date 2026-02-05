@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="menuContent2">
-                        <p><a href="route.html"><img src="images/go_eat.png" alt="" class="goEat">食べに行く</a></p>
-                        <p><a href="#" class="deleteBtn" data-title="${item.title}"><img src="images/delete.png" alt="">削除する</a></p>
+                        <p><a href="route.html"><img src="img/go_eat.png" alt="" class="goEat">食べに行く</a></p>
+                        <p><a href="#" class="deleteBtn" data-title="${item.title}"><img src="img/delete.png" alt="">削除する</a></p>
                     </div>
                 </div>
             </div>
