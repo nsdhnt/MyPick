@@ -9,12 +9,12 @@ backButton.addEventListener(`click`, function(){
 // bookmarkButtons.forEach(button => {
 //     button.addEventListener(`click`, function(event){
 //         event.preventDefault();
-//         if(button.src.includes(`images/bookmark_before.png`)){
-//             button.src = `images/bookmark_after.png`;
+//         if(button.src.includes(`img/bookmark_before.png`)){
+//             button.src = `img/bookmark_after.png`;
 //             toast.textContent = "ブックマークに保存しました！";
 //             toast.style.backgroundColor = "#333";
 //         } else{
-//             button.src = `images/bookmark_before.png`;
+//             button.src = `img/bookmark_before.png`;
 //             toast.textContent = "ブックマークを解除しました！";
 //             toast.style.backgroundColor = "#333";
 //         }
@@ -39,12 +39,12 @@ bookmarkButtons.forEach(button => {
             // 画像なども必要ならここに追加
         };
 
-        if(button.src.includes(`images/bookmark_before.png`)){
-            button.src = `images/bookmark_after.png`;
+        if(button.src.includes(`img/bookmark_before.png`)){
+            button.src = `img/bookmark_after.png`;
             saveBookmark(shopData); // 保存関数へ
             toast.textContent = "保存しました！";
         } else {
-            button.src = `images/bookmark_before.png`;
+            button.src = `img/bookmark_before.png`;
             removeBookmark(shopData.title); // 削除関数へ
             toast.textContent = "解除しました！";
         }
