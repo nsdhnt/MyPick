@@ -105,6 +105,29 @@ main{
     }
 }
 
+.toast {
+    position: fixed;
+    bottom: -50px; /* 最初は画面の下に隠す */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    opacity: 0;
+    transition: all 0.4s ease; /* ふわっと動かすアニメーション */
+    z-index: 130;
+    /* bottom: 20px; */
+}
+
+/* 「show」クラスがついたら見えるようにする */
+.toast.show {
+    bottom: 30px; /* 画面下から30pxの位置に浮き上がる */
+    opacity: 1;
+}
+
+
+
 footer ul{
     display: flex;
     list-style: none;
