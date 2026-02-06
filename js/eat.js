@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="menuWrap">
                 <div class="menuCard">
                     <div class="menuContent1">
-                        <div class="menuLeft"><p></p></div>
+                        <div class="menuLeft"><img></img></div>
                         <div class="menuRight">
                             <h3>${item.title}</h3>
                             <p class="menuText">${item.text}</p>
