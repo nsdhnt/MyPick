@@ -136,20 +136,27 @@ main{
             }
             .menuContent{
                 display: flex;
+                flex-direction: row-reverse;
                 margin-left: 10px;
+                position: relative;
                 /* border: solid 1px tomato; */
                 .menuLeft{
-                    p{
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
                         width: 94px;
                         height: 62px;
-                        border: solid 1px #000;
+                        object-fit: cover;
+                        /* border: solid 1px #000; */
                         border-radius: 6px;
+                        box-shadow: 0 0 2px #999;
                     }
                 }
                 .menuRight{
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-around;
                     padding-left: 10px;
                     /* border: solid 1px tomato; */
                     h3{
@@ -164,6 +171,9 @@ main{
                     }
                 }
             }
+            .bookmarkButton{
+                z-index: 100;
+            }
         }
     }
     .toast {
@@ -177,7 +187,7 @@ main{
         border-radius: 25px;
         opacity: 0;
         transition: all 0.4s ease; /* ふわっと動かすアニメーション */
-        z-index: 10;
+        z-index: 130;
         /* bottom: 20px; */
     }
 
@@ -189,7 +199,7 @@ main{
 }
 
 footer ul{
-    /* z-index: 20; */
+    z-index: 120;
     display: flex;
     list-style: none;
     width: 100%;

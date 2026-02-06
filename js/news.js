@@ -25,73 +25,99 @@ backButton.addEventListener(`click`, function(){
 //     });
 // });
 
-bookmarkButtons.forEach(button => {
-    button.addEventListener(`click`, function(event){
-        event.preventDefault();
-        
-        // 親要素(menuCard)を取得
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 保存されているリストを取得
+    const savedList = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    
+    // 2. 画面上のすべてのブックマークボタンをチェック
+    const bookmarkButtons = document.querySelectorAll('.bookmarkButton');
+    
+    bookmarkButtons.forEach(button => {
+        // ボタンの親要素から店名（h3）を取得
         const card = button.closest('.menuCard');
+        if (!card) return;
         
-        // 保存したい情報をオブジェクトにまとめる
-        const shopData = {
-            title: card.querySelector('h3').textContent,
-            text: card.querySelector('.menuText').innerHTML,
-            // 画像なども必要ならここに追加
-        };
+        const title = card.querySelector('h3').textContent;
 
-        if(button.src.includes(`img/bookmark_before.png`)){
-            button.src = `img/bookmark_after.png`;
-            saveBookmark(shopData); // 保存関数へ
-            toast.textContent = "保存しました！";
-        } else {
-            button.src = `img/bookmark_before.png`;
-            removeBookmark(shopData.title); // 削除関数へ
-            toast.textContent = "解除しました！";
+        // 3. 保存リストにこの店名があれば、画像を「after」に変更しておく
+        if (savedList.some(item => item.title === title)) {
+            button.src = 'img/bookmark_after.png';
         }
-        
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3000);
     });
-});
 
-// ローカルストレージに保存する関数
-function saveBookmark(data) {
-    let list = JSON.parse(localStorage.getItem('bookmarks')) || [];
-    // 重複チェック（店名で判断）
-    if (!list.some(item => item.title === data.title)) {
-        list.push(data);
+    // --- ここから下に以前の「クリックイベント」のコードを続けます ---
+    bookmarkButtons.forEach(button => {
+        button.addEventListener(`click`, function(event){
+            event.preventDefault();
+            
+            // 親要素(menuCard)を取得
+            const card = button.closest('.menuCard');
+            
+            // 保存したい情報をオブジェクトにまとめる
+            const shopData = {
+                title: card.querySelector('h3').textContent,
+                text: card.querySelector('.menuText').innerHTML,
+                // 画像なども必要ならここに追加
+            };
+    
+            if(button.src.includes(`img/bookmark_before.png`)){
+                button.src = `img/bookmark_after.png`;
+                saveBookmark(shopData); // 保存関数へ
+                toast.textContent = "保存しました！";
+            } else {
+                button.src = `img/bookmark_before.png`;
+                removeBookmark(shopData.title); // 削除関数へ
+                toast.textContent = "解除しました！";
+            }
+            
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        });
+    });
+    
+    // ローカルストレージに保存する関数
+    function saveBookmark(data) {
+        let list = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        // 重複チェック（店名で判断）
+        if (!list.some(item => item.title === data.title)) {
+            list.push(data);
+            localStorage.setItem('bookmarks', JSON.stringify(list));
+        }
+    }
+    
+    // ローカルストレージから削除する関数
+    function removeBookmark(title) {
+        let list = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        list = list.filter(item => item.title !== title);
         localStorage.setItem('bookmarks', JSON.stringify(list));
     }
-}
-
-// ローカルストレージから削除する関数
-function removeBookmark(title) {
-    let list = JSON.parse(localStorage.getItem('bookmarks')) || [];
-    list = list.filter(item => item.title !== title);
-    localStorage.setItem('bookmarks', JSON.stringify(list));
-}
-
-
-// タブの見出し（tab-item）を取得
-const tabItems = document.querySelectorAll(".tabItem");
-
-tabItems.forEach((tabItem) => {
-    tabItem.addEventListener("click", () => {
-    // すべてのタブを非アクティブにする
-    tabItems.forEach((t) => {
-        t.classList.remove("active");
-    });
-    // すべてのコンテンツを非表示にする
-    const tabPanels = document.querySelectorAll(".tabPanel");
-    tabPanels.forEach((tabPanel) => {
-        tabPanel.classList.remove("active");
-    });
-
-    // クリックされたタブをアクティブにする
-    tabItem.classList.add("active");
-
-    // 対応するコンテンツを表示
-    const tabIndex = Array.from(tabItems).indexOf(tabItem);
-    tabPanels[tabIndex].classList.add("active");
+    
+    
+    // タブの見出し（tab-item）を取得
+    const tabItems = document.querySelectorAll(".tabItem");
+    
+    tabItems.forEach((tabItem) => {
+        tabItem.addEventListener("click", () => {
+        // すべてのタブを非アクティブにする
+        tabItems.forEach((t) => {
+            t.classList.remove("active");
+        });
+        // すべてのコンテンツを非表示にする
+        const tabPanels = document.querySelectorAll(".tabPanel");
+        tabPanels.forEach((tabPanel) => {
+            tabPanel.classList.remove("active");
+        });
+    
+        // クリックされたタブをアクティブにする
+        tabItem.classList.add("active");
+    
+        // 対応するコンテンツを表示
+        const tabIndex = Array.from(tabItems).indexOf(tabItem);
+        tabPanels[tabIndex].classList.add("active");
+        });
     });
 });
+
+
+
